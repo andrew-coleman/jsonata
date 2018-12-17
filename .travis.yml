@@ -17,8 +17,8 @@ deploy:
 
 jobs:
   include
-    - if: branch = master AND repo = jsonata-js/jsonata
     - stage: documentation
+      if: branch = master AND repo = jsonata-js/jsonata
       script:
         - echo "Publishing documentation..."
         - git config --global user.name "${GH_NAME}"
