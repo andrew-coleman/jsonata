@@ -16,7 +16,7 @@ deploy:
     repo: jsonata-js/jsonata
 
 jobs:
-  include
+  include:
     - stage: documentation
       if: branch = master AND repo = jsonata-js/jsonata
       script:
