@@ -16,7 +16,8 @@ deploy:
     repo: jsonata-js/jsonata
 
 jobs:
-  include:
+  include
+    - if: branch = master AND repo = jsonata-js/jsonata
     - stage: documentation
       script:
         - echo "Publishing documentation..."
@@ -24,5 +25,3 @@ jobs:
         - git config --global user.email "${GH_EMAIL}"
         - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
         - cd website && npm install && GIT_USER="${GH_NAME}" npm run publish-gh-pages
-      on:
-        repo: jsonata-js/jsonata
