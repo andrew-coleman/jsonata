@@ -11,17 +11,17 @@ sidebar_label: In NodeJS
 ## Example nodejs application
 
 ```
-var jsonata = require("jsonata");
+const jsonata = require("jsonata");
 
-var data = {
+const data = {
   example: [
     {value: 4},
     {value: 7},
     {value: 13}
   ]
 };
-var expression = jsonata("$sum(example.value)");
-var result = expression.evaluate(data);  // returns 24
+let expression = jsonata("$sum(example.value)");
+let result = expression.evaluate(data);  // returns 24
 ```
 
 ## ES5 runtimes
@@ -29,4 +29,3 @@ var result = expression.evaluate(data);  // returns 24
 e.g. Nashorn, 
 
 Use `jsonata-es5.js` or `jsonata-es5.min.js`
-
